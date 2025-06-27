@@ -117,6 +117,11 @@ scheduler.add_job(
     replace_existing=True
 )
 
+@app.head("/")
+async def root_head():
+    """HEAD request dla głównego endpointu - używane przez health checki"""
+    return {"status": "ok"}
+
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     """Główna strona z wykresem"""
