@@ -48,9 +48,9 @@ def fetch_pool_data():
 
             # Szukamy "Pływalnia Sportowa" w tablicy
             for facility in data:
-                if facility.get('title') == 'Pływalnia Sportowa':
+                if facility.get('title') == 'Pływalnia Rodzinna':
                     content = facility.get('content', '')
-                    print(f"Znaleziono Pływalnię Sportową")
+                    print(f"Znaleziono Pływalnię Rodzinną")
                     print(f"Content: {content}")
 
                     # Parsujemy liczbę osób z content (format: "Aktualnie na pływalni: X osób")
@@ -64,7 +64,7 @@ def fetch_pool_data():
                         print(f"Nie można sparsować liczby osób z content: {content}")
                         return None
 
-            print("Nie znaleziono 'Pływalnia Sportowa' w odpowiedzi")
+            print("Nie znaleziono 'Pływalnia Rodzinna' w odpowiedzi")
             print(f"Dostępne obiekty: {[f.get('title', 'Brak tytułu') for f in data]}")
             return None
         else:
